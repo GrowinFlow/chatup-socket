@@ -11,17 +11,16 @@ const Port = 4001; // Change to your desired port
 // Configure CORS options for Socket.IO
 const io = socketIo(server, {
   cors: {
-    origin: 'https://deft-genie-5987fc.netlify.app', // Allow this origin
+    origin: '*', // Allow all origins
     methods: ['GET', 'POST'], // Allowed methods
     credentials: true, // Allow cookies
   }
 });
 
 // Enable CORS for Express server
-app.use(cors({ origin: 'https://deft-genie-5987fc.netlify.app' }));
+app.use(cors({ origin: '*' })); // Allow all origins
 
 // Your Express routes and other middleware here
-// For example, you might have something like:
 app.get('/', (req, res) => {
   res.send('Welcome to the server');
 });
